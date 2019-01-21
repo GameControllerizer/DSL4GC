@@ -1,4 +1,4 @@
-# DSL4GC（Domain Specific Language for Game Control）
+# !!! DEPRECATED !!! DSL4GC（Domain Specific Language for Game Control）
 
 In [GameControllerizer](../README.md), game control information is expressed in an abstract format DSL4GC(Domain-specific Language for Game Control）. DSL4GC is expressed as JSON format, and is easy to read & edit.
 Appropriately changing this information and re-exporting it in Node-RED makes it possible to 
