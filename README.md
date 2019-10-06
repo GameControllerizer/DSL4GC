@@ -25,7 +25,7 @@ DSL4GC で対象とするデバイスは Gamepad/Mouse/Keyboard とし，
 gc_sentence = Array[gc_gamepad_word]  |
               Array[gc_mouse_word]    |
               Array[gc_keyboard_word]
-gc_gamaped_word = {c | c ∈ {"dpad","btn","stk0","stk1","cfg_input","dur"}}
+gc_gamaped_word = {c | c ∈ {"dpad","btn","stk0","stk1","cfg_input","dur","interrupt"}}
 gc_mouse_word = {c | c ∈ {"btn","mov","dur"}}
 gc_keyboard_word = {c | c ∈ {"key","mod","dur"}}
 ```
@@ -99,6 +99,14 @@ gc_keyboard_word = {c | c ∈ {"key","mod","dur"}}
 // Chain．すぐには適用されず，次のコマンドを待ちます．
 {"dpad": 6}
 ```
+### `interrupt`
+```Javascript
+{"interrupt": 0}    // 実行中のコマンドを強制中断
+```
+実行H/Wに割り込み，実行中および先行投入済みのコマンドをすべてキャンセルし，初期状態に戻ります．
+特に長い`"dur"`をもつコマンドを中断したい場合に利用します．
+
+制御を抽象化するためというよりは，物理動作における使い勝手の観点から追加されています．
 
 ## gc_mouse_word
 下記要素をもつマウスとして抽象化しました．
